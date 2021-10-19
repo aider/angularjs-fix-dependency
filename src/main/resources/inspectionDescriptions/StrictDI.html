@@ -1,0 +1,8 @@
+<html lang="en">
+<body>
+Inspection that fixes angularjs dependency injections from
+`.controller('MainCtrl', function($scope, $timeout){ ...
+to
+`.controller('MainCtrl', ['$scope', '$timeout', function($scope, $timeout){ ...`
+</body>
+</html>
