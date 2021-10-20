@@ -2,6 +2,7 @@
 <idea-plugin>
     <id>com.github.aider.angularjsfixdependency</id>
     <name>AngularJS Fix Dependency Inspection</name>
+    <category>JavaScript Frameworks and Tools</category>
     <vendor>aider</vendor>
     <depends>JavaScript</depends>
     <depends>com.intellij.modules.platform</depends>
@@ -10,11 +11,15 @@
         <localInspection language="TypeScript"
                          displayName="Replace '($dep1, $dep2, $dep3,...) => {...' with ['$dep1', '$dep2', '$dep3',...($dep1, $dep2, $dep3) => {...]"
                          groupPath="JavaScript"
-                         groupBundle="messages.InspectionsBundle"
-                         groupKey="group.names.probable.bugs"
                          enabledByDefault="true"
                          level="WARNING"
                          implementationClass="com.github.aider.angularjsfixdependency.StrictDIInspection"/>
+        <localInspection language="TypeScript"
+                         displayName="Wrap '(function () { ... })();"
+                         groupPath="JavaScript"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="com.github.aider.angularjsfixdependency.WrapFunctionInspection"/>
     </extensions>
 
 </idea-plugin>

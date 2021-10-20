@@ -4,7 +4,6 @@ import com.intellij.codeInspection.LocalQuickFix
 import com.intellij.codeInspection.ProblemDescriptor
 import com.intellij.codeInspection.util.IntentionFamilyName
 import com.intellij.lang.javascript.JSTokenTypes
-import com.intellij.lang.javascript.psi.JSFunctionExpression
 import com.intellij.lang.javascript.psi.JSStatement
 import com.intellij.lang.javascript.psi.impl.JSPsiElementFactory
 import com.intellij.openapi.project.Project
@@ -13,34 +12,20 @@ import com.intellij.psi.SmartPsiElementPointer
 import com.intellij.psi.codeStyle.CodeStyleManager
 import com.intellij.psi.util.PsiUtilCore
 
-class StrictDiFix(
-    private val expression: SmartPsiElementPointer<JSFunctionExpression?>,
-    private val buf: StringBuilder,
+class WrapFunctionFix(
+    private val expression: SmartPsiElementPointer<PsiElement?>,
+//    private val buf: StringBuilder,
     private val descriptionTemplate: String
 ) : LocalQuickFix {
-
-    private fun isStatementWrappedWithBrackets(statement: PsiElement): Boolean {
-        return PsiUtilCore.getElementType(statement.firstChild) === JSTokenTypes.LBRACKET || PsiUtilCore.getElementType(
-            statement.lastChild
-        ) === JSTokenTypes.RBRACKET
-    }
-
-    private fun addBracketsToStatement(smartPsiElementPointer: SmartPsiElementPointer<JSFunctionExpression?>?) {
+    private fun addBracketsToStatement(smartPsiElementPointer: SmartPsiElementPointer<PsiElement?>?) {
         if (smartPsiElementPointer == null) {
             return
         }
-
-        val function = smartPsiElementPointer.element
-        if (function != null) {
-//            JSParameterListElement[] functionParameters = function.getParameters();
-//            StringBuilder buf = new StringBuilder();
-//            for (JSParameterListElement functionParameter : functionParameters) {
-//                buf.append(QUOTE).append(functionParameter.getName()).append(QUOTE).append(COMMA_SPACE);
-//            }
-
-            val text = function.text
-            val newText = LBRACKET + buf + text + RBRACKET
-            replaceAndReformat(function, newText)
+        val elem = smartPsiElementPointer.element
+        if (elem != null) {
+            val text = elem.text
+            val newText = "(function () {\n$text\n})();"
+            replaceAndReformat(elem, newText)
         }
     }
 
