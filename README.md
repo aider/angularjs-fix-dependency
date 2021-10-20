@@ -1,8 +1,8 @@
 # AngularJS fix dependency plugin for IntelliJ IDEA-based IDEs
 
 ![Build](https://github.com/aider/angularjs-fix-dependency/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/17836-angularjs-fix-dependency-for-idea-based-ides)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/com.github.aider.angularjsfixdependency)
 
 ### **Dependency injection**
 

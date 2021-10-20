@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.aider.angularjsfixdependency</id>
-    <name>AngularJS Fix Dependency for IDEA-Based IDEs</name>
+    <name>AngularJS Fix Dependency Inspection</name>
     <vendor>aider</vendor>
     <depends>JavaScript</depends>
     <depends>com.intellij.modules.platform</depends>
