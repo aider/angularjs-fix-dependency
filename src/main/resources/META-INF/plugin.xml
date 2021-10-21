@@ -14,12 +14,12 @@
                          enabledByDefault="true"
                          level="WARNING"
                          implementationClass="com.github.aider.angularjsfixdependency.StrictDIInspection"/>
-        <localInspection language="TypeScript"
-                         displayName="Wrap '(function () { ... })();"
-                         groupPath="JavaScript"
-                         enabledByDefault="true"
-                         level="WARNING"
-                         implementationClass="com.github.aider.angularjsfixdependency.WrapFunctionInspection"/>
+<!--        <localInspection language="TypeScript"-->
+<!--                         displayName="Wrap '(function () { ... })();"-->
+<!--                         groupPath="JavaScript"-->
+<!--                         enabledByDefault="true"-->
+<!--                         level="WARNING"-->
+<!--                         implementationClass="com.github.aider.angularjsfixdependency.WrapFunctionInspection"/>-->
     </extensions>
 
 </idea-plugin>

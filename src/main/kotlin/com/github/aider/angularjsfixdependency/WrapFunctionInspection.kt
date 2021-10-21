@@ -56,15 +56,10 @@ class WrapFunctionInspection : JSInspection() {
                         wrapFnPoint = node.originalElement
                     }
                     if (wrapFnPoint != null) {
-//                        println(jsReferenceExpression?.text)
                         val fix = WrapFunctionFix(
                             SmartPointerManager.createPointer(wrapFnPoint),
                             DESCRIPTION_TEMPLATE
                         )
-                        println(wrapFnPoint.text)
-                        println("------------------------------------------------------------------")
-
-//                        session.
                         holder.registerProblem(wrapFnPoint, DESCRIPTION_TEMPLATE, fix)
                     }
                 }
